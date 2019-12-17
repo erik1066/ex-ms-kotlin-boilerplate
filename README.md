@@ -4,6 +4,21 @@ This is a repository containing a mostly empty Kotlin / Spring microservice.
 ## Modifying this microservice
 Open `BoilerplateController.kt` and add begin adding your own logic.
 
+## Building and running this microservice
+Run the following commands at a Bash prompt:
+
+```sh
+./gradlew --no-daemon build
+java -Dserver.tomcat.protocol-header=x-forwarded-proto -Dserver.tomcat.remote-ip-header=x-forwarded-for -jar build/libs/ex-ms-kotlin-boilerplate-0.0.1-SNAPSHOT.jar
+```
+
+You can alternatively build and run Docker containers:
+
+```sh
+make docker-build
+make docker-run
+```
+
 ## License
 The repository utilizes code licensed under the terms of the Apache Software License and therefore is licensed under ASL v2 or later.
 
